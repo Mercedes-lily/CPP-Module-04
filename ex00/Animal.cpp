@@ -32,7 +32,7 @@ Animal::~Animal(void)
 	std::cout << std::endl;
 }
 
-std::string	Animal::getType(void)
+std::string	Animal::getType(void) const
 {
 	return(this->_type);
 }
@@ -40,4 +40,9 @@ std::string	Animal::getType(void)
 void	Animal::setType(std::string type)
 {
 	this->_type = type;
+}
+
+void	Animal::makeSound(void) const
+{
+	std::cout << "Random Sound" << std::endl;
 }

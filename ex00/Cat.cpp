@@ -29,10 +29,11 @@ Cat& Cat::operator=(Cat const& rhs)
 
 Cat::~Cat(void)
 {
-	std::cout << "This kind and delicate cat passed away";
+	std::cout << "This kind and delicate cat passed away 🫥 ⚰️";
+	std::cout << std::endl;
 }
 
-void	Cat::makeSound()
+void	Cat::makeSound() const
 {
-	std::cout << "Meow MEOW" << std::endl;
+	std::cout << "📢 Meow MEOW 📢" << std::endl;
 }
