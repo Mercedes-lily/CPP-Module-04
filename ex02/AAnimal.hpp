@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 # include <string>
 #define PINK    "\e[38;5;212m"
 #define WHITE   "\e[0;37m"
@@ -11,19 +11,19 @@
 #define PURPLE  "\e[0;35m"
 #define CYAN    "\e[0;36m"
 
-class Animal
+class AAnimal
 {
 private:
 	std::string _type;
 public:
 	std::string	getType(void) const;
 	void	setType(std::string type);
-	Animal(void);
-	Animal(std::string type);
-	Animal(Animal const &src);
-	virtual~Animal(void);
-	Animal& operator=(Animal const& rhs);
-	virtual void	makeSound() const;
+	AAnimal(void);
+	AAnimal(std::string type);
+	AAnimal(AAnimal const &src);
+	virtual~AAnimal(void) = 0;
+	AAnimal& operator=(AAnimal const& rhs);
+	virtual void	makeSound() const = 0;
 };
 
 #endif
