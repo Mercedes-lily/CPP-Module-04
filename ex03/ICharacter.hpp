@@ -3,7 +3,6 @@
 # include <string>
 # include "AMateria.hpp" 
 
-
 /********************************************
  * NOTE *
  * pure virtuelle : une classe virtual ... = 0 ne peut pas avoir de definition dans sa classe d'origine
@@ -16,13 +15,13 @@
  * interface c'est comme un blue print d'une classe
  * Tout classe qui heritera dune interface devra fonctionner comme l'interface functionne 
 *********************************************/
+
+class AMateria;
+
 class ICharacter
 {
 private:
 public:
-	//ICharacter(void);
-	//ICharacter(ICharacter const& src);
-	//ICharacter& operator=(ICharacter const& rhs);
 	virtual ~ICharacter() {}
 	virtual std::string const & getName() const = 0;
 	virtual void equip(AMateria* m) = 0;

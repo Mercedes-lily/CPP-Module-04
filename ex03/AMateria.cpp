@@ -1,16 +1,17 @@
 #include "AMateria.hpp"
-#include "Icharacter.hpp"
+#include "ICharacter.hpp"
 #include <string>
 #include <iostream>
 
+
 AMateria::AMateria(void) : _type("")
 {
-	std::cout << "AMateria default constructor called" <<std::endl;
+	std::cout << WHITE << "Materia crafted" <<std::endl;
 }
 
 AMateria::AMateria(std::string const & type) : _type(type)
 {
-	std::cout << "AMateria non-default constructor called" <<std::endl;
+	std::cout << WHITE << "Materia crafted" <<std::endl;
 }
 
 AMateria::AMateria(AMateria const& src)
@@ -20,7 +21,7 @@ AMateria::AMateria(AMateria const& src)
 
 AMateria::~AMateria(void)
 {
-	std::cout << "AMateria deconstructor called" <<std::endl;
+	std::cout << WHITE << "Materia destruct" <<std::endl;
 }
 
 AMateria& AMateria::operator=(AMateria const& rhs)
@@ -44,5 +45,8 @@ void	AMateria::setType(std::string type)
 
 void AMateria::use(ICharacter& target)
 {
-	//TODO ?
+	if (this->_type.compare("ice") == 0)
+		std::cout << BLUE << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	if (this->_type.compare("cure") == 0)
+		std::cout << GREEN << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
