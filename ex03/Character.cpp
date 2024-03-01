@@ -11,9 +11,6 @@ Character::Character(void) : _name("")
 	std::cout << PURPLE << "A new human is born" << std::endl;
 	for (int i = 0; i <= 3; i++)
 		this->inventory[i] = NULL;
-	for (int i = 0; i <= 99; i++)
-		this->_Garbage[i] = NULL;
-	this->_iGarbage = 0;
 }
 
 Character::Character(std::string name) : _name(name)
@@ -46,11 +43,11 @@ Character::~Character(void)
 {
 	if (Character::_Garbage[0] != NULL)
 	{
-		for(int i = 0; i < this->_iGarbage; i++)
+		/*for(int i = 0; i < Character::_iGarbage; i++)
 		{
 			delete Character::_Garbage[i];
 			Character::_Garbage[i] = NULL;
-		}
+		}*/
 	}
 	std::cout << PURPLE << "Bye bye dear human" << std::endl;
 }

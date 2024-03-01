@@ -2,13 +2,13 @@
 #include <string>
 #include <iostream>
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal("dog")
 {
 	std::cout << "A gentle little puppy is born 🐶";
 	std::cout << std::endl;
 }
 
-Dog::Dog(std::string name)
+Dog::Dog(std::string name): Animal("dog")
 {
 	std::cout << "A gentle little puppy is born 🐶";
 	std::cout << "You name it " << name << " Helo " << name;

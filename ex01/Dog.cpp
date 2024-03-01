@@ -2,14 +2,14 @@
 #include <string>
 #include <iostream>
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal("dog")
 {
 	std::cout << YELLOW << "A gentle little puppy is born 🐶";
 	std::cout << std::endl << WHITE;
 	this->_brain = new Brain();
 }
 
-Dog::Dog(std::string name)
+Dog::Dog(std::string name) : Animal("dog")
 {
 	std::cout << YELLOW << "A gentle little puppy is born 🐶";
 	std::cout << "You name it " << name << " Helo " << name;
@@ -17,15 +17,17 @@ Dog::Dog(std::string name)
 	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const& src)
+Dog::Dog(Dog const& src) : Animal(src)
 {
-	*this = src;
-}
+	this->_brain = new Brain(*src._brain);
+} 
 
 Dog& Dog::operator=(Dog const& rhs)
 {
-	if (this != &rhs)
-		this->setType(rhs.getType());
+	delete this->_brain;
+	this->_brain = new Brain(*rhs._brain);
+	for(int i = 0; i < 100; i ++)
+		this->_brain[i] = rhs._brain[i];
 	return *this;
 }
 

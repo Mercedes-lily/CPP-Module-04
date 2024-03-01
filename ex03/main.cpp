@@ -43,8 +43,8 @@ int main()
 	std::cout << std::endl;
 	me->use(0, *bob);  //Yes
 	me->use(1, *bob);  //Yes
-	me->unequip(2);
-	me->use(4, *me); //No
+	me->unequip(2);  //Yes
+	me->use(4, *me);  //No
 	std::cout << std::endl;
 	for(int i = 0; i < 10; i++)
 	{

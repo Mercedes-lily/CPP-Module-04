@@ -2,13 +2,13 @@
 #include <string>
 #include <iostream>
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal("cat")
 {
 	std::cout << "A cute little baby cat is born 🐱";
 	std::cout << std::endl;
 }
 
-Cat::Cat(std::string name)
+Cat::Cat(std::string name) : Animal("cat")
 {
 	std::cout << "A cute little baby cat is born 🐱";
 	std::cout << "You name it " << name << " Helo " << name;
@@ -29,7 +29,7 @@ Cat& Cat::operator=(Cat const& rhs)
 
 Cat::~Cat(void)
 {
-	std::cout << "This kind and delicate cat passed away 🫥 ⚰️";
+	std::cout << "This kind and delicate cat passed away ⚰️";
 	std::cout << std::endl;
 }
 

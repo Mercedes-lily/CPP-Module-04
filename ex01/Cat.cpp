@@ -2,14 +2,14 @@
 #include <string>
 #include <iostream>
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal("Cat")
 {
 	std::cout << BLUE << "A cute little baby cat is born 🐱";
 	std::cout << BLUE << std::endl << WHITE;
 	this->_brain = new Brain();
 }
 
-Cat::Cat(std::string name)
+Cat::Cat(std::string name) : Animal("Cat")
 {
 	std::cout << BLUE << "A cute little baby cat is born 🐱";
 	std::cout << "You name it " << name << " Helo " << name << WHITE;
@@ -17,21 +17,23 @@ Cat::Cat(std::string name)
 	this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const& src)
+Cat::Cat(Cat const& src) : Animal(src)
 {
-	*this = src;
+	this->_brain = new Brain(*src._brain);
 }
 
 Cat& Cat::operator=(Cat const& rhs)
 {
-	if (this != &rhs)
-		this->setType(rhs.getType());
+	delete this->_brain;
+	this->_brain = new Brain();
+	for(int i = 0; i < 100; i ++)
+		this->_brain[i] = rhs._brain[i];
 	return *this;
 }
 
 Cat::~Cat(void)
 {
-	std::cout << BLUE << "This kind and delicate cat passed away 🫥 ⚰️";
+	std::cout << BLUE << "This kind and delicate cat passed away ⚰️";
 	std::cout << std::endl << WHITE;
 	delete this->_brain;
 }

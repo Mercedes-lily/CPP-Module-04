@@ -14,7 +14,7 @@ public:
 	WrongAnimal(WrongAnimal const &src);
 	virtual~WrongAnimal(void);
 	WrongAnimal& operator=(WrongAnimal const& rhs);
-	virtual void	makeSound() const;
+	void	makeSound() const;
 };
 
 #endif

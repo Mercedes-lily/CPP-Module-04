@@ -13,7 +13,7 @@
 
 class Animal
 {
-private:
+protected:
 	std::string _type;
 public:
 	std::string	getType(void) const;

@@ -2,13 +2,12 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongDog.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
-Animal *animal_array[8];
+	Animal *animal_array[8];
+	Animal *dog = new Dog();
+	Animal *dog2 = new Dog();
 	for(int i = 0; i <= 7; i++)
 	{
 		if(i % 2 == 0)
@@ -18,5 +17,7 @@ Animal *animal_array[8];
 	}
 	for(int i = 0; i <= 7; i++)
 		delete animal_array[i];
+	delete dog;
+	delete dog2;
 	return 0;
 }
